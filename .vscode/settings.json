@@ -1,0 +1,34 @@
+{
+    "[latex]": {
+        "editor.wordWrap": "on",
+        "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?．。，、（）「」［］｛｝《》てにをはがのともへでや",
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": false
+        },
+    },
+    "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    ],
+    "latex-workshop.latex.outDir": "%DIR%//%DOCFILE%",
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.synctex.gz",
+        // for Beamer files
+        "_minted*", "*.nav", "*.snm", "*.vrb",
+    ],
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+}
