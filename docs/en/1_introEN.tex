@@ -1,0 +1,17 @@
+\documentclass[./main]{subfiles}
+\newboolean{isMain}
+\setboolean{isMain}{false}
+
+\begin{document}
+\section{Introduction}
+Is it citable? $\to$ \citet{Haxby2425}
+
+\ifthenelse{\boolean{isMain}}{ %pass
+}{ %else
+    \clearpage
+    \cite{}
+    \bibliography{bibtex-demo.bib}
+    \bibliographystyle{apalike}
+}
+
+\end{document}

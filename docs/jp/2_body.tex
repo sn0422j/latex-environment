@@ -1,0 +1,19 @@
+\documentclass[./main]{subfiles}
+\newboolean{isMain}
+\setboolean{isMain}{false}
+
+\begin{document}
+
+\section{本論}
+ここでは，\citet{Mitchell1191} 
+と \citet{Haxby2425} を引用します．
+
+\ifthenelse{\boolean{isMain}}{ %pass
+}{ %else
+    \clearpage
+    \cite{}
+    \bibliography{bibtex-demo.bib}
+    \bibliographystyle{apalike}
+}
+
+\end{document}

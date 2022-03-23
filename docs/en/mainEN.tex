@@ -1,0 +1,56 @@
+\documentclass[a4paper,dvipdfmx]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{setspace}
+\onehalfspacing{}
+
+\usepackage{subfiles}
+\usepackage{ifthen}
+
+% Equations
+\usepackage{mathtools,amssymb,amsfonts}
+
+% Images
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+
+% Table
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage[style=base]{caption}
+\usepackage{longtable}
+
+% BibTeX
+\usepackage[round]{natbib}
+\usepackage{xurl}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+
+\begin{document}
+
+\title{\huge Sample Document}
+\author{Hanako Yamada}
+\date{\today}
+\maketitle
+
+% For Subfiles with BibTeX
+\newboolean{isMain}
+\setboolean{isMain}{true}
+
+% Body
+\subfile{1_introEN}
+\subfile{2_bodyEN}
+\subfile{3_conclEN}
+
+% Reference
+\newpage
+\cite{}
+\bibliography{bibtex-demo.bib}
+\bibliographystyle{apalike}
+
+% Appendix
+\newpage
+\part*{Appendix}
+\appendix
+\subfile{99_appendixEN}
+
+\end{document}

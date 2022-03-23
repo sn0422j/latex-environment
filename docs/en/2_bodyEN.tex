@@ -1,0 +1,18 @@
+\documentclass[./main]{subfiles}
+\newboolean{isMain}
+\setboolean{isMain}{false}
+
+\begin{document}
+
+\section{Main Part}
+Here we cite \citet{Mitchell1191} and \citet{Haxby2425}.
+
+\ifthenelse{\boolean{isMain}}{ %pass
+}{ %else
+    \clearpage
+    \cite{}
+    \bibliography{bibtex-demo.bib}
+    \bibliographystyle{apalike}
+}
+
+\end{document}

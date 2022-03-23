@@ -1,6 +1,14 @@
 ## Directory
 /test/
+/bibfile/
 
+# Figures
+*.jpg
+*.svg
+*.png
+
+# PDF output
+*.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

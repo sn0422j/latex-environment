@@ -10,19 +10,33 @@
             "strings": false
         },
     },
-    "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
+    "latex-workshop.latex.recipe.default": "toolchain",
     "latex-workshop.latex.tools": [
         {
-            "name": "latexmk_rconly",
-            "command": "latexmk",
+            "command": "ptex2pdf",
             "args": [
-                "-outdir=%OUTDIR%",
-                "%DOC%"
+                "-l",
+                "-od",
+                "-V 7",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                // "-output-directory=%OUTDIR%",
+                // "-f ptex-ipaex.map",
+                "%DOCFILE%"
             ],
-            "env": {}
+            "name": "ptex2pdf"
+        },
+        {
+            "command": "pbibtex",
+            "args": [
+                "%DOCFILE%",
+                "-kanji=utf8",
+                // "-outdir=%OUTDIR%",
+            ],
+            "name": "pbibtex"
         },
     ],
-    "latex-workshop.latex.outDir": "%DIR%//%DOCFILE%",
+    // "latex-workshop.latex.outDir": "%DIR%//%DOCFILE%",
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
     "latex-workshop.latex.clean.fileTypes": [
         "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.synctex.gz",
@@ -31,4 +45,15 @@
     ],
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "toolchain",
+            "tools": [
+                "ptex2pdf",
+                "pbibtex",
+                "ptex2pdf",
+                "ptex2pdf",
+            ]
+        },
+    ],
 }
