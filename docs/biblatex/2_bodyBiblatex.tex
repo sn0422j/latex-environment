@@ -1,0 +1,16 @@
+\documentclass[./mainBiblatex]{subfiles}
+\newboolean{isMain}
+\setboolean{isMain}{false}
+
+\begin{document}
+
+\section{Main Part}
+Here we cite \textcite{Mitchell1191} and \textcite{Haxby2425}.
+
+\ifthenelse{\boolean{isMain}}{ %pass
+}{ %else
+    \clearpage
+    \printbibliography
+}
+
+\end{document}

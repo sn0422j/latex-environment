@@ -1,0 +1,15 @@
+\documentclass[./mainBiblatex]{subfiles}
+\newboolean{isMain}
+\setboolean{isMain}{false}
+
+\begin{document}
+\section{Introduction}
+Is it citable? \autocite{Haxby2425}
+
+\ifthenelse{\boolean{isMain}}{ %pass
+}{ %else
+    \clearpage
+    \printbibliography
+}
+
+\end{document}

@@ -10,7 +10,7 @@
             "strings": false
         },
     },
-    "latex-workshop.latex.recipe.default": "toolchain",
+    "latex-workshop.latex.recipe.default": "toolchain (biblatex)",
     "latex-workshop.latex.tools": [
         {
             "command": "ptex2pdf",
@@ -35,6 +35,15 @@
             ],
             "name": "pbibtex"
         },
+        {
+            "command": "biber",
+            "args": [
+                "%DOC%",
+                // "-kanji=utf8",
+                // "-outdir=%OUTDIR%",
+            ],
+            "name": "biber"
+        },
     ],
     // "latex-workshop.latex.outDir": "%DIR%//%DOCFILE%",
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
@@ -42,12 +51,23 @@
         "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.synctex.gz",
         // for Beamer files
         "_minted*", "*.nav", "*.snm", "*.vrb",
+        // for Biblatex files
+        ".bcf", ".run.xml",
     ],
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.recipes": [
         {
-            "name": "toolchain",
+            "name": "toolchain (biblatex)",
+            "tools": [
+                "ptex2pdf",
+                "biber",
+                "ptex2pdf",
+                "ptex2pdf",
+            ]
+        },
+        {
+            "name": "toolchain (bibtex)",
             "tools": [
                 "ptex2pdf",
                 "pbibtex",

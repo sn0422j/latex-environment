@@ -1,0 +1,59 @@
+\documentclass[a4paper,dvipdfmx]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{setspace}
+\onehalfspacing{}
+
+\usepackage{subfiles}
+\usepackage{ifthen}
+
+% Equations
+\usepackage{mathtools,amssymb,amsfonts}
+
+% Images
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+
+% Table
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage[style=base]{caption}
+\usepackage{longtable}
+
+% BibLaTeX
+\usepackage{xurl}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa,sorting=nyt,isbn=false,url=false,eprint=false,backend=biber]{biblatex}
+% If Using With Natbib Style, Set "[natbib=true]{biblatex}"
+\AtEveryBibitem{\clearfield{note}}
+\addbibresource{bibtex-demo.bib}
+
+\begin{document}
+
+\title{\huge Sample Document}
+\author{Hanako Yamada}
+\date{\today}
+\maketitle
+
+% For Subfiles with BibTeX
+\newboolean{isMain}
+\setboolean{isMain}{true}
+
+% Body
+\subfile{1_introBiblatex}
+\subfile{2_bodyBiblatex}
+\subfile{3_conclBiblatex}
+
+% Reference
+\newpage
+\printbibliography
+
+% Appendix
+\newpage
+\part*{Appendix}
+\appendix
+\subfile{99_appendixBiblatex}
+
+\end{document}

@@ -1,0 +1,15 @@
+\documentclass[./mainBiblatex]{subfiles}
+\newboolean{isMain}
+\setboolean{isMain}{false}
+
+\begin{document}
+\section{Appendix1}
+This is an appendix.
+
+\ifthenelse{\boolean{isMain}}{ %pass
+}{ %else
+    \clearpage
+    \printbibliography
+}
+
+\end{document}

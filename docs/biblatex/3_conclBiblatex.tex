@@ -1,0 +1,15 @@
+\documentclass[./mainBiblatex]{subfiles}
+\newboolean{isMain}
+\setboolean{isMain}{false}
+
+\begin{document}
+\section{Conclusion}
+Thank you for reading.
+
+\ifthenelse{\boolean{isMain}}{ %pass
+}{ %else
+    \clearpage
+    \printbibliography
+}
+
+\end{document}
