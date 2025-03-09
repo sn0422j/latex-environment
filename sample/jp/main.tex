@@ -1,4 +1,4 @@
-\documentclass[a4paper,dvipdfmx]{article}
+\documentclass[a4j,uplatex,dvipdfmx]{jsarticle}
 \usepackage[margin=1.0in]{geometry}
 \usepackage{setspace}
 \onehalfspacing{}
@@ -23,12 +23,12 @@
 % BibTeX
 \usepackage[round]{natbib}
 \usepackage{xurl}
-\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage[colorlinks,allcolors=blue,dvipdfmx]{hyperref}
 
 \begin{document}
 
-\title{\huge Sample Document}
-\author{Hanako Yamada}
+\title{\huge サンプル文書}
+\author{山田　花子}
 \date{\today}
 \maketitle
 
@@ -37,9 +37,9 @@
 \setboolean{isMain}{true}
 
 % Body
-\subfile{1_introEN}
-\subfile{2_bodyEN}
-\subfile{3_conclEN}
+\subfile{1_intro}
+\subfile{2_body}
+\subfile{3_concl}
 
 % Reference
 \newpage
@@ -49,8 +49,8 @@
 
 % Appendix
 \newpage
-\part*{Appendix}
+\part*{付録}
 \appendix
-\subfile{99_appendixEN}
+\subfile{99_appendix}
 
 \end{document}
