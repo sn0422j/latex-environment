@@ -35,5 +35,5 @@
       "description": "比較元の Git revision を入力",
       "default": "HEAD~1"
     }
-  ],
+  ]
 }
