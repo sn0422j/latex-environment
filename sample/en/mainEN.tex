@@ -1,17 +1,19 @@
-\documentclass[a4paper,uplatex,dvipdfmx]{article}
+\documentclass[a4paper]{article}
 \usepackage[margin=1.0in]{geometry}
 \usepackage{setspace}
 \onehalfspacing{}
 
 \usepackage{subfiles}
-\usepackage{ifthen}
+
+% Japanese
+\usepackage{luatexja}
 
 % Equations
 \usepackage{mathtools,amssymb,amsfonts}
 
 % Images
-\usepackage[dvipdfmx]{graphicx}
-\usepackage[dvipdfmx]{color}
+\usepackage{graphicx}
+\usepackage{xcolor}
 
 % Table
 \usepackage{booktabs}
@@ -20,10 +22,11 @@
 \usepackage[style=base]{caption}
 \usepackage{longtable}
 
-% BibTeX
-\usepackage[round]{natbib}
+% Bibliography
+\usepackage[backend=biber,style=numeric-comp,natbib=true]{biblatex}
 \usepackage{xurl}
-\usepackage[colorlinks,allcolors=blue,dvipdfmx]{hyperref}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\addbibresource{bibtex-demo.bib}
 
 \begin{document}
 
@@ -32,24 +35,32 @@
 \date{\today}
 \maketitle
 
-% For Subfiles with BibTeX
-\newboolean{isMain}
-\setboolean{isMain}{true}
+\section{Introduction}
+Is it citable? $\to$ \citet{Haxby2425}
 
-% Body
-\subfile{1_introEN}
-\subfile{2_bodyEN}
-\subfile{3_conclEN}
+\section{Main Part}
+Here we cite \citet{Mitchell1191} and \citet{Haxby2425}.
+
+\section{Conclusion}
+Thank you for reading.
+
+% % Body
+% \subfile{1_introEN}
+% \subfile{2_bodyEN}
+% \subfile{3_conclEN}
+
+% % Reference
+% \newpage
+% \cite{}
+% \bibliography{bibtex-demo.bib}
+% \bibliographystyle{apalike}
 
 % Reference
 \newpage
-\cite{}
-\bibliography{bibtex-demo.bib}
-\bibliographystyle{apalike}
+\printbibliography
 
 % Appendix
 \newpage
-\part*{Appendix}
 \appendix
 \subfile{99_appendixEN}
 

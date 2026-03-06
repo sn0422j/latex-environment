@@ -1,17 +1,11 @@
-\documentclass[./main]{subfiles}
-\newboolean{isMain}
-\setboolean{isMain}{false}
+\documentclass[mainEN]{subfiles}
 
 \begin{document}
 \section{Appendix1}
-This is an appendix.
+This is an appendix. \cite{Haxby2425}
 
-\ifthenelse{\boolean{isMain}}{ %pass
-}{ %else
-    \clearpage
-    \cite{}
-    \bibliography{bibtex-demo.bib}
-    \bibliographystyle{apalike}
-}
-
+\ifSubfilesClassLoaded{
+  \newpage
+  \printbibliography
+}{}
 \end{document}

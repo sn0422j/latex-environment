@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "pandoc: tex -> docx",
+      "type": "shell",
+      "command": "./scripts/build-docx.sh",
+      "args": [
+        "${file}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "latexdiff-vc: current tex -> diff tex",
+      "type": "shell",
+      "command": "./scripts/build-diff.sh",
+      "args": [
+        "${file}",
+        "${input:gitRevision}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+    
+  ],
+  "inputs": [
+    {
+      "id": "gitRevision",
+      "type": "promptString",
+      "description": "比較元の Git revision を入力",
+      "default": "HEAD~1"
+    }
+  ],
+}

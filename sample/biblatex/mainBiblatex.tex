@@ -1,17 +1,19 @@
-\documentclass[a4paper,uplatex,dvipdfmx]{article}
+\documentclass[a4paper]{article}
 \usepackage[margin=1.0in]{geometry}
 \usepackage{setspace}
 \onehalfspacing{}
 
 \usepackage{subfiles}
-\usepackage{ifthen}
+
+% Japanese
+\usepackage{luatexja}
 
 % Equations
 \usepackage{mathtools,amssymb,amsfonts}
 
 % Images
-\usepackage[dvipdfmx]{graphicx}
-\usepackage[dvipdfmx]{color}
+\usepackage{graphicx}
+\usepackage{xcolor}
 
 % Table
 \usepackage{booktabs}
@@ -20,13 +22,19 @@
 \usepackage[style=base]{caption}
 \usepackage{longtable}
 
-% BibLaTeX
-\usepackage{xurl}
-\usepackage[colorlinks,allcolors=blue,dvipdfmx]{hyperref}
+% Bibliography
 \usepackage[english]{babel}
+\usepackage{xurl}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage{csquotes}
-\usepackage[style=apa,sorting=nyt,isbn=false,url=false,eprint=false,backend=biber]{biblatex}
-% If Using With Natbib Style, Set "[natbib=true]{biblatex}"
+\usepackage[
+  style=apa,
+  sorting=nyt,
+  isbn=false,
+  url=false,
+  eprint=false,
+  backend=biber
+]{biblatex}
 \AtEveryBibitem{\clearfield{note}}
 \addbibresource{bibtex-demo.bib}
 
@@ -37,14 +45,14 @@
 \date{\today}
 \maketitle
 
-% For Subfiles with BibTeX
-\newboolean{isMain}
-\setboolean{isMain}{true}
+\section{Introduction}
+Is it citable? \autocite{Haxby2425}
 
-% Body
-\subfile{1_introBiblatex}
-\subfile{2_bodyBiblatex}
-\subfile{3_conclBiblatex}
+\section{Main Part}
+Here we cite \textcite{Mitchell1191} and \textcite{Haxby2425}.
+
+\section{Conclusion}
+Thank you for reading.
 
 % Reference
 \newpage
@@ -52,7 +60,6 @@
 
 % Appendix
 \newpage
-\part*{Appendix}
 \appendix
 \subfile{99_appendixBiblatex}
 

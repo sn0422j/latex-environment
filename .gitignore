@@ -10,6 +10,13 @@
 # PDF output
 *.pdf
 
+# Word output
+*.doc
+*.docx
+
+# Latex-diff output
+*-diff.tex
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

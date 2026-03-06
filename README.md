@@ -1,4 +1,4 @@
-# TeXLive + VSCode + Bibtex
+# TeXLive + VSCode + Biblatex
 
 ## Reference
 - [Paperist/texlive-ja: The minimal TeXLive Docker image for Japanese](https://github.com/Paperist/texlive-ja/tree/main)

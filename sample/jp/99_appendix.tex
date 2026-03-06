@@ -1,17 +1,11 @@
-\documentclass[./main]{subfiles}
-\newboolean{isMain}
-\setboolean{isMain}{false}
+\documentclass[main]{subfiles}
 
 \begin{document}
 \section{付録1}
-これは付録です．
+これは付録です．\cite{Haxby2425}
 
-\ifthenelse{\boolean{isMain}}{ %pass
-}{ %else
-    \clearpage
-    \cite{}
-    \bibliography{bibtex-demo.bib}
-    \bibliographystyle{apalike}
-}
-
+\ifSubfilesClassLoaded{
+  \newpage
+  \printbibliography
+}{}
 \end{document}

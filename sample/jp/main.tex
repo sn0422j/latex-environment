@@ -1,17 +1,19 @@
-\documentclass[a4j,uplatex,dvipdfmx]{jsarticle}
+\documentclass[a4paper]{jlreq}
 \usepackage[margin=1.0in]{geometry}
 \usepackage{setspace}
 \onehalfspacing{}
 
 \usepackage{subfiles}
-\usepackage{ifthen}
+
+% Japanese
+\usepackage{luatexja}
 
 % Equations
 \usepackage{mathtools,amssymb,amsfonts}
 
 % Images
-\usepackage[dvipdfmx]{graphicx}
-\usepackage[dvipdfmx]{color}
+\usepackage{graphicx}
+\usepackage{xcolor}
 
 % Table
 \usepackage{booktabs}
@@ -20,10 +22,12 @@
 \usepackage[style=base]{caption}
 \usepackage{longtable}
 
-% BibTeX
-\usepackage[round]{natbib}
+% Bibliography
+\usepackage[backend=biber,style=numeric-comp,natbib=true]{biblatex}
 \usepackage{xurl}
-\usepackage[colorlinks,allcolors=blue,dvipdfmx]{hyperref}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\setlength{\biblabelsep}{0.8em}
+\addbibresource{bibtex-demo.bib}
 
 \begin{document}
 
@@ -32,24 +36,18 @@
 \date{\today}
 \maketitle
 
-% For Subfiles with BibTeX
-\newboolean{isMain}
-\setboolean{isMain}{true}
+\section{序論}
+引用できていますか？ $\to$ \cite{Haxby2425}
 
-% Body
-\subfile{1_intro}
-\subfile{2_body}
-\subfile{3_concl}
+\section{本論}
+ここでは，\cite{Mitchell1191} と \cite{Haxby2425} を引用します．
 
 % Reference
 \newpage
-\cite{}
-\bibliography{bibtex-demo.bib}
-\bibliographystyle{apalike}
+\printbibliography
 
 % Appendix
 \newpage
-\part*{付録}
 \appendix
 \subfile{99_appendix}
 

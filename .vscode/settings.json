@@ -11,7 +11,7 @@
         },
     },
     "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
-    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
     "latex-workshop.latex.clean.fileTypes": [
         "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.synctex.gz",
@@ -22,4 +22,9 @@
     ],
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.pdf": "${capture}.bbl, ${capture}.aux, ${capture}.log, ${capture}.synctex.gz, ${capture}.blg, ${capture}.idx, ${capture}.ind, ${capture}.lof, ${capture}.lot, ${capture}.out, ${capture}.toc, ${capture}.acn, ${capture}.acr, ${capture}.alg, ${capture}.glg, ${capture}.glo, ${capture}.gls, ${capture}.ist, ${capture}.fls, ${capture}.fdb_latexmk, ${capture}.bcf, ${capture}.run.xml, _minted-${capture}*, ${capture}.nav, ${capture}.snm, ${capture}.vrb",
+    }
+
 }
