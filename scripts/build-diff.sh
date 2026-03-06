@@ -21,7 +21,6 @@ fi
 
 OUTPUT_TEX="$(realpath -m "$OUTPUT_TEX")"
 OUTPUT_DIR="$(dirname "$OUTPUT_TEX")"
-OUTPUT_BASE="$(basename "$OUTPUT_TEX" .tex)"
 
 mkdir -p "$OUTPUT_DIR"
 cd "$DIR"
@@ -38,8 +37,8 @@ latexdiff-vc \
   -r "$REVISION" \
   "$BASE.tex"
 
-# latexdiff-vc は通常 BASE-diffREV.tex を作るので、それを拾う
-GENERATED_TEX="$(find . -maxdepth 1 -type f -name "${BASE}-diff*.tex" | head -n 1 || true)"
+# latexdiff-vc は通常 BASE-diffREV.tex を作るので、最新の生成ファイルを拾う
+GENERATED_TEX="$(find . -maxdepth 1 -type f -name "${BASE}-diff*.tex" -printf '%T@ %P\n' | sort -nr | head -n 1 | cut -d' ' -f2- || true)"
 
 if [ -z "$GENERATED_TEX" ]; then
   echo "Error: latexdiff-vc did not generate a diff tex file."
